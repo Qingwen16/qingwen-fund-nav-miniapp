@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### 说明：
 微信推出小程序，操作原理类似React Native,ionic framework
 现实现一个小程序版微票
@@ -26,3 +27,7 @@
 
 ### 项目地址：
 https://github.com/wangmingjob/weapp-weipiao
+=======
+# qingwen-fund-nav-miniapp
+基金估值微信小程序
+>>>>>>> origin/jwruan-zjz
