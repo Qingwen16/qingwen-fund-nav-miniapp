@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+package-lock.json
+
+# 编译产物
+miniprogram_npm/
+dist/
+
+# 日志
+*.log
+
+# 编辑器
+.vscode/
+.idea/
+
+# 微信开发者工具临时文件
+.tea/
