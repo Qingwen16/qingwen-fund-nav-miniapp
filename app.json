@@ -1,14 +1,14 @@
 {
-  "pages":[
-    "pages/home/index",
-    "pages/cinema/index",
+  "pages": [
+    "pages/holding/index",
+    "pages/watchlist/index",
     "pages/my/index",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "微票",
+    "navigationBarTitleText": "基金估值",
     "navigationBarBackgroundColor": "#FFFFFF",
     "backgroundColor": "#F2f2f2",
     "enablePullDownRefresh": true
@@ -18,22 +18,26 @@
     "selectedColor": "#3cc51f",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/home/index",
-      "iconPath": "image/icon_normal.png",
-      "selectedIconPath": "image/icon_pressed.png",
-      "text": "持有"
-    }, {
-      "pagePath": "pages/cinema/index",
-      "iconPath": "image/icon_normal.png",
-      "selectedIconPath": "image/icon_pressed.png",
-      "text": "自选"
-    }, {
-      "pagePath": "pages/my/index",
-      "iconPath": "image/icon_normal.png",
-      "selectedIconPath": "image/icon_pressed.png",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/holding/index",
+        "iconPath": "image/icon_normal.png",
+        "selectedIconPath": "image/icon_pressed.png",
+        "text": "持有"
+      },
+      {
+        "pagePath": "pages/watchlist/index",
+        "iconPath": "image/icon_normal.png",
+        "selectedIconPath": "image/icon_pressed.png",
+        "text": "自选"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "image/icon_normal.png",
+        "selectedIconPath": "image/icon_pressed.png",
+        "text": "我的"
+      }
+    ]
   },
   "debug": true
 }
