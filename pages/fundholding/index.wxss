@@ -1,0 +1,171 @@
+/* 全局容器 */
+.container {
+  padding-bottom: 60rpx;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 资产头部 */
+.asset-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.asset-item {
+  text-align: center;
+  flex: 1;
+}
+
+.asset-label {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.asset-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.profit {
+  color: #e64340;
+}
+
+.loss {
+  color: #00b42a;
+}
+
+/* 涨跌统计 */
+.rise-fall-stat {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.rise-icon {
+  color: #e64340;
+  font-size: 28rpx;
+  margin-right: 5rpx;
+}
+
+.fall-icon {
+  color: #00b42a;
+  font-size: 28rpx;
+  margin-right: 5rpx;
+}
+
+.stat-num {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.stat-label {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 基金列表 */
+.fund-list {
+  height: calc(100vh - 300rpx);
+}
+
+.fund-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.fund-base-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.fund-name {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fund-amount {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.fund-profit-info {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20rpx;
+}
+
+.fund-profit {
+  font-size: 28rpx;
+}
+
+.fund-ratio {
+  font-size: 26rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 4rpx;
+  color: #fff;
+}
+
+.profit-bg {
+  background-color: #e64340;
+}
+
+.loss-bg {
+  background-color: #00b42a;
+}
+
+/* 底部导航 */
+.tab-bar {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60rpx;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.tab-item.active {
+  color: #1aad19;
+}
+
+.tab-icon {
+  font-size: 28rpx;
+  margin-bottom: 5rpx;
+}
