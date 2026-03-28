@@ -1,14 +1,23 @@
 <view class="container">
-  <!-- 账户资产概览 -->
+
+  <!-- 总资产概览 -->
   <view class="asset-header">
     <view class="asset-item">
-      <text class="asset-label">账户资产(元)</text>
-      <text class="asset-value">{{accountAssets}}</text>
+      <text class="asset-label">总账户资产(元)</text><text class="asset-value-total">{{totalAccountAssets}}</text>
     </view>
     <view class="asset-item">
-      <text class="asset-label">当日总收益</text>
-      <text class="asset-value profit-loss {{totalProfitLoss < 0 ? 'loss' : 'profit'}}">{{totalProfitLoss}}</text>
+      <text class="asset-label">总当日收益</text><text class="{{totalAccountProfit >= 0 ? 'asset-value-profit' : 'asset-value-lose'}}">{{totalAccountProfit >= 0 ? '+' + totalAccountProfit : totalAccountProfit}}</text>
     </view>
+  </view>
+
+  <!-- 账户切换栏 -->
+  <view class="account-tab">
+    <block wx:for="{{accountList}}" wx:key="accountId">
+      <view class="account-item {{currentAccountId == item.accountId ? 'active' : ''}}" bindtap="switchAccount" data-accountid="{{item.accountId}}">
+        <text class="account-name">{{item.name}}</text>
+        <text class="account-amount">¥{{item.totalAmount}}</text><text class="account-profit {{item.totalProfit < 0 ? 'loss' : 'profit'}}">{{item.totalProfit > 0 ? '+' : ''}}{{item.totalProfit}}</text>
+      </view>
+    </block>
   </view>
 
   <!-- 涨跌统计 -->
@@ -31,15 +40,17 @@
   <scroll-view class="fund-list" scroll-y>
     <block wx:for="{{fundList}}" wx:key="id">
       <view class="fund-item">
-        <!-- 基金名称与持仓金额 -->
         <view class="fund-base-info">
           <text class="fund-name">{{item.name}}</text>
           <text class="fund-amount">¥{{item.amount}}</text>
         </view>
-        <!-- 收益与涨幅 -->
         <view class="fund-profit-info">
-          <text class="fund-profit {{item.profit < 0 ? 'loss' : 'profit'}}">{{item.profit > 0 ? '+' : ''}}{{item.profit}}</text>
-          <text class="fund-ratio {{item.ratio < 0 ? 'loss-bg' : 'profit-bg'}}">{{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%</text>
+          <text class="fund-profit {{item.profit < 0 ? 'loss' : 'profit'}}">
+            {{item.profit > 0 ? '+' : ''}}{{item.profit}}
+          </text>
+          <text class="fund-ratio {{item.ratio < 0 ? 'loss-bg' : 'profit-bg'}}">
+            {{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%
+          </text>
         </view>
       </view>
     </block>

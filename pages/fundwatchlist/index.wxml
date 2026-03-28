@@ -1,2 +1,39 @@
-<!--pages/fundwatchlist/index.wxml-->
-<text>pages/fundwatchlist/index.wxml</text>
+<view class="container">
+
+  <!-- 涨跌统计 -->
+  <view class="rise-fall-stat">
+    <view class="stat-item">
+      <text class="rise-icon">↑</text>
+      <text class="stat-num">{{riseCount}}</text>
+    </view>
+    <view class="stat-item">
+      <text class="fall-icon">↓</text>
+      <text class="stat-num">{{fallCount}}</text>
+    </view>
+    <view class="stat-label">
+      <text>当日收益 03-27</text>
+      <text>当日涨幅 03-27</text>
+    </view>
+  </view>
+
+  <!-- 基金列表 -->
+  <scroll-view class="fund-list" scroll-y>
+    <block wx:for="{{fundList}}" wx:key="id">
+      <view class="fund-item">
+        <view class="fund-base-info">
+          <text class="fund-name">{{item.name}}</text>
+          <text class="fund-amount">¥{{item.amount}}</text>
+        </view>
+        <view class="fund-profit-info">
+          <text class="fund-profit {{item.profit < 0 ? 'loss' : 'profit'}}">
+            {{item.profit > 0 ? '+' : ''}}{{item.profit}}
+          </text>
+          <text class="fund-ratio {{item.ratio < 0 ? 'loss-bg' : 'profit-bg'}}">
+            {{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%
+          </text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+</view>
