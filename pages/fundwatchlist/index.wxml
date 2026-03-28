@@ -1,20 +1,26 @@
 <view class="container">
 
-  <!-- 涨跌统计 -->
-  <view class="rise-fall-stat">
-    <view class="stat-item">
-      <text class="rise-icon">↑</text>
-      <text class="stat-num">{{riseCount}}</text>
-    </view>
-    <view class="stat-item">
-      <text class="fall-icon">↓</text>
-      <text class="stat-num">{{fallCount}}</text>
-    </view>
-    <view class="stat-label">
-      <text>当日收益 03-27</text>
-      <text>当日涨幅 03-27</text>
-    </view>
+<!-- 涨跌统计 -->
+<view class="rise-fall-stat">
+  <view class="stat-item">
+    <text class="rise-icon">↑</text>
+    <text class="stat-num">{{riseCount}}</text>
+    <text class="fall-icon">↓</text>
+    <text class="stat-num">{{fallCount}}</text>
   </view>
+
+  <!-- 当日涨幅 排序 -->
+  <view class="stat-day" bindtap="sortByDayRatio">
+    <text class="stat-label">当日涨幅</text>
+    <text class="sort-arrow">{{daySortType === 'desc' ? '↑' : '↓'}}</text>
+  </view>
+
+  <!-- 板块涨幅 排序 -->
+  <view class="stat-sector" bindtap="sortBySectorRatio">
+    <text class="stat-label">板块涨幅</text>
+    <text class="sort-arrow">{{sectorSortType === 'desc' ? '↑' : '↓'}}</text>
+  </view>
+</view>
 
   <!-- 基金列表 -->
   <scroll-view class="fund-list" scroll-y>
@@ -22,15 +28,12 @@
       <view class="fund-item">
         <view class="fund-base-info">
           <text class="fund-name">{{item.name}}</text>
-          <text class="fund-amount">¥{{item.amount}}</text>
         </view>
-        <view class="fund-profit-info">
-          <text class="fund-profit {{item.profit < 0 ? 'loss' : 'profit'}}">
-            {{item.profit > 0 ? '+' : ''}}{{item.profit}}
-          </text>
-          <text class="fund-ratio {{item.ratio < 0 ? 'loss-bg' : 'profit-bg'}}">
-            {{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%
-          </text>
+        <view class="fund-day-ratio">
+          <text class="fund-ratio {{item.profit < 0 ? 'loss-bg' : 'profit-bg'}}">{{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%</text>
+        </view>
+        <view class="fund-sector-ratio">
+          <text class="fund-ratio {{item.ratio < 0 ? 'loss-bg' : 'profit-bg'}}">{{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%</text>
         </view>
       </view>
     </block>
