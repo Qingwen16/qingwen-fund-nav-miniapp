@@ -1,2 +1,23 @@
-<!--pages/userinfo/index.wxml-->
-<text>pages/userinfo/index.wxml</text>
+<view class="container">
+
+
+  <view class="content">
+    <!-- 免责声明 -->
+    <view class="disclaimer">
+      <text class="disclaimer-text">免责声明：投资有风险，入市需谨慎，此估值来源于多方渠道，估值精确率只能作为参考。</text>
+    </view>
+
+    <view class="advertisement-space">
+      <text class="ad-title">广告位招租</text>
+    </view>
+
+    <view class="chat-group">
+      <text class="group-info">讨论群：</text>
+    </view>
+
+    <view class="support-view">
+      <text class="support-info">支持我们</text>
+    </view>
+  </view>
+
+</view>
