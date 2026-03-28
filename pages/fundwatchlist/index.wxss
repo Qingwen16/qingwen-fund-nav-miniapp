@@ -1,0 +1,166 @@
+/* 全局容器 —— 去掉顶部内边距，避免固定栏抖动 */
+.container {
+  padding-bottom: 60rpx;
+  padding-top: 0; /* 这里必须改成 0，否则固定栏会晃动 */
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 涨跌统计 —— 真正纯固定，永不抖动 */
+.rise-fall-stat {
+  display: flex;
+  align-items: center;
+  height: 5vh;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+  /* 核心：固定不抖动 */
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.stat-item {
+  display: flex;
+  width: 60%;
+  align-items: center;
+}
+
+.stat-day {
+  display: flex;
+  width: 20%;
+  align-items: center;
+}
+
+.stat-sector {
+  display: flex;
+  width: 20%;
+  align-items: center;
+}
+
+.rise-icon {
+  color: #e64340;
+  font-size: 28rpx;
+  margin-right: 5rpx;
+}
+
+.fall-icon {
+  color: #00b42a;
+  font-size: 28rpx;
+  margin-right: 5rpx;
+}
+
+.stat-num {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.stat-label {
+  display: flex;
+  width: 80%;
+  flex: 1;
+  justify-content: center;
+  gap: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 排序文字 + 箭头 水平垂直居中 */
+.stat-day,
+.stat-sector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+}
+
+/* 排序箭头样式 */
+.sort-arrow {
+  font-size: 22rpx;
+  color: #999;
+}
+
+/* 基金列表 —— 剩余高度滚动，不会穿透、不会抖动 */
+.fund-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto; /* 强制只在这里滚动 */
+  box-sizing: border-box;
+}
+
+.fund-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 6vh;
+  background-color: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.fund-item:first-child {
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.fund-base-info {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  /* 名称垂直居中 */
+}
+
+.fund-name {
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.fund-day-ratio {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fund-sector-ratio {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fund-ratio {
+  width: 80%;
+  font-size: 25rpx;
+  padding: 10rpx 10rpx;
+  border-radius: 4rpx;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+}
+
+/* 通用样式 */
+.profit {
+  color: #e64340;
+}
+
+.loss {
+  color: #00b42a;
+}
+
+.profit-bg {
+  background-color: #e64340;
+}
+
+.loss-bg {
+  background-color: #00b42a;
+}

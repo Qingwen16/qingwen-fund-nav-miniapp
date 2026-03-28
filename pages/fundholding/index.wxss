@@ -1,0 +1,173 @@
+/* 全局容器 */
+.container {
+  padding-bottom: 60rpx;
+  padding-top: 10rpx;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 资产头部 */
+.asset-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.asset-item {
+  text-align: center;
+  flex: 1;
+}
+.asset-label {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.asset-value-total {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+.asset-value-lose {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  color: #00b42a;
+}
+.asset-value-profit {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  color: #e64340;
+}
+
+/* 账户切换栏 */
+.account-tab {
+  display: flex;
+  overflow-x: auto;
+  padding: 10rpx 10rpx 0;
+  background-color: #fff;
+  gap: 10rpx;
+}
+.account-item {
+  flex: 0 0 200rpx;
+  padding: 15rpx 10rpx;
+  border-radius: 8rpx;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.account-item.active {
+  background-color: #e8f4f8;
+  border: 1px solid #1aad19;
+}
+.account-name {
+  font-size: 24rpx;
+  color: #333;
+  display: block;
+  margin-bottom: 5rpx;
+}
+.account-amount {
+  font-size: 26rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 5rpx;
+}
+.account-profit {
+  font-size: 24rpx;
+}
+
+/* 涨跌统计 */
+.rise-fall-stat {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.rise-icon {
+  color: #e64340;
+  font-size: 28rpx;
+  margin-right: 5rpx;
+}
+.fall-icon {
+  color: #00b42a;
+  font-size: 28rpx;
+  margin-right: 5rpx;
+}
+.stat-num {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.stat-label {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 基金列表 */
+.fund-list {
+  height: calc(100vh - 380rpx);
+}
+.fund-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.fund-base-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.fund-name {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fund-amount {
+  font-size: 26rpx;
+  color: #666;
+}
+.fund-profit-info {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20rpx;
+}
+.fund-profit {
+  font-size: 28rpx;
+}
+.fund-ratio {
+  font-size: 26rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 4rpx;
+  color: #fff;
+}
+
+/* 通用样式 */
+.profit {
+  color: #e64340;
+}
+.loss {
+  color: #00b42a;
+}
+.profit-bg {
+  background-color: #e64340;
+}
+.loss-bg {
+  background-color: #00b42a;
+}
+
