@@ -1,1 +1,76 @@
-/* pages/userinfo/index.wxss */
+/* 全局容器 —— 去掉顶部内边距，避免固定栏抖动 */
+.container {
+  padding-bottom: 60rpx;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.content {
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.disclaimer-text {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.advertisement-space {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.ad-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.chat-group {
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.group-info {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.support-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.support-info {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}

@@ -1,7 +1,8 @@
 /* 全局容器 —— 去掉顶部内边距，避免固定栏抖动 */
 .container {
   padding-bottom: 60rpx;
-  padding-top: 0; /* 这里必须改成 0，否则固定栏会晃动 */
+  padding-top: 0;
+  /* 这里必须改成 0，否则固定栏会晃动 */
   background-color: #f5f7fa;
   min-height: 100vh;
   display: flex;
@@ -12,10 +13,10 @@
 .rise-fall-stat {
   display: flex;
   align-items: center;
-  height: 5vh;
+  height: 4.5vh;
   padding: 10rpx 20rpx;
   background-color: #fff;
-  margin-bottom: 10rpx;
+  margin-bottom: 5rpx;
   /* 核心：固定不抖动 */
   position: sticky;
   top: 0;
@@ -25,63 +26,56 @@
   border-bottom: 1rpx solid #e5e5e5;
 }
 
-.stat-item {
+.title-info {
   display: flex;
   width: 60%;
-  align-items: center;
-}
-
-.stat-day {
-  display: flex;
-  width: 20%;
-  align-items: center;
-}
-
-.stat-sector {
-  display: flex;
-  width: 20%;
-  align-items: center;
 }
 
 .rise-icon {
   color: #e64340;
-  font-size: 28rpx;
-  margin-right: 5rpx;
+  font-size: 23rpx;
+  font-weight: bold;
+  width: 7%;
 }
 
 .fall-icon {
   color: #00b42a;
-  font-size: 28rpx;
-  margin-right: 5rpx;
+  font-size: 23rpx;
+  font-weight: bold;
+  width: 7%;
 }
 
 .stat-num {
-  font-size: 28rpx;
+  font-size: 23rpx;
   font-weight: bold;
+  width: 7%;
 }
 
-.stat-label {
+.today-info {
+  display: flex;
+  width: 20%;
+  align-items: center;
+}
+
+.sector-info {
+  display: flex;
+  width: 20%;
+  align-items: center;
+}
+
+.info-label {
   display: flex;
   width: 80%;
-  flex: 1;
   justify-content: center;
-  gap: 20rpx;
-  font-size: 24rpx;
+  font-size: 23rpx;
   color: #999;
 }
 
-/* 排序文字 + 箭头 水平垂直居中 */
-.stat-day,
-.stat-sector {
-  display: flex;
+.info-arrow {
   align-items: center;
   justify-content: center;
-  gap: 6rpx;
-}
-
-/* 排序箭头样式 */
-.sort-arrow {
-  font-size: 22rpx;
+  width: 20%;
+  font-size: 23rpx;
   color: #999;
 }
 
@@ -89,7 +83,7 @@
 .fund-list {
   flex: 1;
   min-height: 0;
-  overflow-y: auto; /* 强制只在这里滚动 */
+  overflow-y: auto;
   box-sizing: border-box;
 }
 
@@ -112,12 +106,12 @@
   width: 60%;
   display: flex;
   align-items: center;
-  /* 名称垂直居中 */
 }
 
 .fund-name {
-  font-size: 28rpx;
+  font-size: 23rpx;
   color: #333;
+  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -140,7 +134,7 @@
 
 .fund-ratio {
   width: 80%;
-  font-size: 25rpx;
+  font-size: 23rpx;
   padding: 10rpx 10rpx;
   border-radius: 4rpx;
   color: #fff;

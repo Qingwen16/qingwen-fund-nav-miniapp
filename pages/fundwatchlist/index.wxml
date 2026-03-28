@@ -1,26 +1,26 @@
 <view class="container">
 
-<!-- 涨跌统计 -->
-<view class="rise-fall-stat">
-  <view class="stat-item">
-    <text class="rise-icon">↑</text>
-    <text class="stat-num">{{riseCount}}</text>
-    <text class="fall-icon">↓</text>
-    <text class="stat-num">{{fallCount}}</text>
-  </view>
+  <!-- 涨跌统计 -->
+  <view class="rise-fall-stat">
+    <view class="title-info">
+      <text class="rise-icon">↑</text>
+      <text class="stat-num">{{riseCount}}</text>
+      <text class="fall-icon">↓</text>
+      <text class="stat-num">{{fallCount}}</text>
+    </view>
 
-  <!-- 当日涨幅 排序 -->
-  <view class="stat-day" bindtap="sortByDayRatio">
-    <text class="stat-label">当日涨幅</text>
-    <text class="sort-arrow">{{daySortType === 'desc' ? '↑' : '↓'}}</text>
-  </view>
+    <!-- 当日涨幅 排序 -->
+    <view class="today-info" bindtap="sortByDayRatio">
+      <text class="info-label">当日涨幅</text>
+      <text class="info-arrow">{{daySortType === 'desc' ? '↑' : '↓'}}</text>
+    </view>
 
-  <!-- 板块涨幅 排序 -->
-  <view class="stat-sector" bindtap="sortBySectorRatio">
-    <text class="stat-label">板块涨幅</text>
-    <text class="sort-arrow">{{sectorSortType === 'desc' ? '↑' : '↓'}}</text>
+    <!-- 板块涨幅 排序 -->
+    <view class="sector-info" bindtap="sortBySectorRatio">
+      <text class="info-label">板块涨幅</text>
+      <text class="info-arrow">{{sectorSortType === 'desc' ? '↑' : '↓'}}</text>
+    </view>
   </view>
-</view>
 
   <!-- 基金列表 -->
   <scroll-view class="fund-list" scroll-y>
