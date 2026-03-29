@@ -1,81 +1,122 @@
-/* 全局容器 */
+page {
+  /* 禁止页面整体滚动，所有滚动交由 scroll-view 处理 */
+  overflow: hidden;
+  height: 100%;
+}
+
 .container {
-  padding-bottom: 60rpx;
-  padding-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: #f5f7fa;
-  min-height: 100vh;
 }
 
 /* 资产头部 */
 .asset-header {
   display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 100%;
+  padding: 10rpx 10rpx;
   background-color: #fff;
+  flex-shrink: 0;
+  /* 防止被压缩 */
+  border-top: 1rpx solid #e5e5e5;
   margin-bottom: 10rpx;
 }
+
 .asset-item {
+  width: 50%;
+  box-sizing: border-box;
   text-align: center;
-  flex: 1;
 }
+
 .asset-label {
-  font-size: 24rpx;
+  width: 100%;
+  font-size: 25rpx;
+  font-weight: bold;
   color: #666;
   display: block;
-  margin-bottom: 10rpx;
+  margin-bottom: 4rpx;
 }
+
+.asset-value-profit,
+.asset-value-lose,
 .asset-value-total {
-  font-size: 36rpx;
+  width: 100%;
+  font-size: 3.5vw;
+  /* 根据屏幕宽度动态变化 */
   font-weight: bold;
-  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .asset-value-lose {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333;
   color: #00b42a;
 }
+
 .asset-value-profit {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333;
   color: #e64340;
 }
 
-/* 账户切换栏 */
+/* 账户切换栏 - 可滚动 */
 .account-tab {
   display: flex;
   overflow-x: auto;
-  padding: 10rpx 10rpx 0;
+  padding: 10rpx 10rpx;
   background-color: #fff;
   gap: 10rpx;
+  /* 平滑滚动，提升手感 */
+  -webkit-overflow-scrolling: touch;
+  /* 隐藏滚动条（可选） */
+  scrollbar-width: none;
+  flex-shrink: 0;
+  /* 防止被压缩 */
+  margin-bottom: 10rpx;
 }
+
+.account-tab::-webkit-scrollbar {
+  display: none;
+}
+
 .account-item {
-  flex: 0 0 200rpx;
-  padding: 15rpx 10rpx;
+  /* 禁止收缩，确保不会压缩 */
+  flex-shrink: 0;
+  /* 边框占位统一，防止active时宽度变化 */
+  box-sizing: border-box;
+  padding: 10rpx 10rpx;
   border-radius: 8rpx;
   background-color: #f5f5f5;
   text-align: center;
+  /* 默认透明边框，保证宽度恒定 */
+  border: 1px solid transparent;
 }
+
 .account-item.active {
   background-color: #e8f4f8;
-  border: 1px solid #1aad19;
+  border-color: #1aad19;
 }
+
 .account-name {
-  font-size: 24rpx;
+  font-size: 23rpx;
+  font-weight: bold;
   color: #333;
   display: block;
-  margin-bottom: 5rpx;
+  margin-bottom: 4rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 .account-amount {
-  font-size: 26rpx;
+  font-size: 23rpx;
   color: #666;
+  font-weight: bold;
   display: block;
-  margin-bottom: 5rpx;
 }
+
 .account-profit {
-  font-size: 24rpx;
+  font-size: 23rpx;
+  font-weight: bold;
 }
 
 /* 涨跌统计 */
@@ -85,26 +126,33 @@
   padding: 10rpx 20rpx;
   background-color: #fff;
   margin-bottom: 10rpx;
+  flex-shrink: 0;
+  /* 防止被压缩 */
 }
+
 .stat-item {
   display: flex;
   align-items: center;
   margin-right: 20rpx;
 }
+
 .rise-icon {
   color: #e64340;
   font-size: 28rpx;
   margin-right: 5rpx;
 }
+
 .fall-icon {
   color: #00b42a;
   font-size: 28rpx;
   margin-right: 5rpx;
 }
+
 .stat-num {
   font-size: 28rpx;
   font-weight: bold;
 }
+
 .stat-label {
   display: flex;
   flex: 1;
@@ -116,58 +164,90 @@
 
 /* 基金列表 */
 .fund-list {
-  height: calc(100vh - 380rpx);
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
+
 .fund-item {
   display: flex;
-  flex-direction: column;
-  padding: 20rpx;
+  flex-direction: row;
+  align-items: center;
+  height: 7vh;
   background-color: #fff;
-  margin-bottom: 10rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  padding: 0 20rpx;
+  box-sizing: border-box;
 }
+
+.fund-item:first-child {
+  border-top: 1rpx solid #e5e5e5;
+}
+
 .fund-base-info {
+  width: 60%;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10rpx;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .fund-name {
-  font-size: 28rpx;
+  font-size: 23rpx;
   color: #333;
-  flex: 1;
+  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1;
+  margin-bottom: 6rpx;
 }
+
 .fund-amount {
-  font-size: 26rpx;
+  font-size: 23rpx;
   color: #666;
+  font-weight: bold;
 }
-.fund-profit-info {
+
+.fund-profit-info,
+.fund-ratio-info {
+  width: 20%;
   display: flex;
-  justify-content: flex-end;
-  gap: 20rpx;
+  justify-content: center;
+  align-items: center;
 }
-.fund-profit {
-  font-size: 28rpx;
-}
+
+.fund-profit,
 .fund-ratio {
-  font-size: 26rpx;
-  padding: 5rpx 10rpx;
+  width: 80%;
+  font-size: 23rpx;
+  font-weight: bold;
+  padding: 10rpx 10rpx;
   border-radius: 4rpx;
   color: #fff;
+  /* 启用 flex 实现内部文字居中 */
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: center;
+  /* 水平居中 */
+  /* 移除原有的 line-height，避免影响垂直居中 */
+  line-height: normal;
 }
 
 /* 通用样式 */
 .profit {
   color: #e64340;
 }
+
 .loss {
   color: #00b42a;
 }
+
 .profit-bg {
   background-color: #e64340;
 }
+
 .loss-bg {
   background-color: #00b42a;
 }
-

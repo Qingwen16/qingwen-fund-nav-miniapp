@@ -7,7 +7,8 @@ Page({
     accountList: [ // 账户列表（最多4个）
       { accountId: 'acc001', name: '主账户', totalAmount: '0.00', totalProfit: 0 },
       { accountId: 'acc002', name: '理财账户', totalAmount: '0.00', totalProfit: 0 },
-      { accountId: 'acc003', name: '备用账户', totalAmount: '0.00', totalProfit: 0 }
+      { accountId: 'acc003', name: '备用账户', totalAmount: '0.00', totalProfit: 0 },
+      { accountId: 'acc004', name: 'cashiuhffajofjnoawnf', totalAmount: '0.00', totalProfit: 0 }
     ],
     currentAccountId: 'acc001', // 当前选中账户
     totalAccountAssets: '0.00', // 所有账户总金额
@@ -142,8 +143,8 @@ Page({
     // 场景1基础数据，为不同账户调整数值（保证差异化）
     const mockDataMap = {
       acc001: { // 主账户
-        accountAssets: 185623.89,
-        totalProfitLoss: -1256.78,
+        accountAssets: 1856235234234243243234243243523.89,
+        totalProfitLoss: -123243252356.78,
         fundList: [
           { id: 1, name: '易方达沪深300ETF联接A', amount: 35890.23, profit: 89.56, ratio: 0.25 },
           { id: 2, name: '华夏新能源车ETF联接C', amount: 28765.12, profit: -156.89, ratio: -0.55 },
@@ -151,10 +152,15 @@ Page({
           { id: 4, name: '汇添富恒生科技ETF发起式联接Q', amount: 32100.45, profit: -320.67, ratio: -1.00 },
           { id: 5, name: '博时黄金ETF联接A', amount: 18900.67, profit: 45.23, ratio: 0.24 },
           { id: 6, name: '富国中证军工ETF联接A', amount: 15678.90, profit: 67.89, ratio: 0.43 },
-          { id: 7, name: '中欧数字经济混合发起A', amount: 20150.34, profit: -189.76, ratio: -0.94 },
+          { id: 7, name: '中欧数字经济混合发起A', amount: 20150.34, profit: -189.76, ratio: 0 },
           { id: 8, name: '南方全球精选配置QDII', amount: 12890.56, profit: 32.10, ratio: 0.25 },
           { id: 9, name: '广发纳斯达克100ETF联接人民币(QDII)', amount: 19876.43, profit: 98.76, ratio: 0.50 },
-          { id: 10, name: '华安创业板50ETF联接C', amount: 19710.35, profit: -245.68, ratio: -1.25 }
+          { id: 10, name: '华安创业板50ETF联接C', amount: 19710.35, profit: -245.68, ratio: -1.25 },
+          { id: 11, name: '易方达消费行业股票', amount: 32301.21, profit: 80.60, ratio: 0.23 },
+          { id: 12, name: '华夏沪深500ETF联接A', amount: 25888.61, profit: -141.20, ratio: -0.50 },
+          { id: 13, name: '嘉实沪深300增强A', amount: 19404.70, profit: -189.31, ratio: -0.87 },
+          { id: 14, name: '汇添富消费升级混合', amount: 28890.41, profit: -288.60, ratio: -0.90 },
+          { id: 15, name: '博时标普500ETF联接A', amount: 17010.60, profit: 40.71, ratio: 0.22 }
         ]
       },
       acc002: { // 理财账户（数值调整10%）

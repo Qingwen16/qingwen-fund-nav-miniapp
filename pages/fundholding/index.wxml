@@ -15,7 +15,7 @@
     <block wx:for="{{accountList}}" wx:key="accountId">
       <view class="account-item {{currentAccountId == item.accountId ? 'active' : ''}}" bindtap="switchAccount" data-accountid="{{item.accountId}}">
         <text class="account-name">{{item.name}}</text>
-        <text class="account-amount">¥{{item.totalAmount}}</text><text class="account-profit {{item.totalProfit < 0 ? 'loss' : 'profit'}}">{{item.totalProfit > 0 ? '+' : ''}}{{item.totalProfit}}</text>
+        <text class="account-amount">{{item.totalAmount}}</text><text class="account-profit {{item.totalProfit < 0 ? 'loss' : 'profit'}}">{{item.totalProfit > 0 ? '+' : ''}}{{item.totalProfit}}</text>
       </view>
     </block>
   </view>
@@ -42,15 +42,13 @@
       <view class="fund-item">
         <view class="fund-base-info">
           <text class="fund-name">{{item.name}}</text>
-          <text class="fund-amount">¥{{item.amount}}</text>
+          <text class="fund-amount">{{item.amount}}</text>
         </view>
         <view class="fund-profit-info">
-          <text class="fund-profit {{item.profit < 0 ? 'loss' : 'profit'}}">
-            {{item.profit > 0 ? '+' : ''}}{{item.profit}}
-          </text>
-          <text class="fund-ratio {{item.ratio < 0 ? 'loss-bg' : 'profit-bg'}}">
-            {{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%
-          </text>
+          <text class="fund-profit {{item.profit < 0 ? 'loss' : 'profit'}}">{{item.profit > 0 ? '+' : ''}}{{item.profit}}</text>
+        </view>
+        <view class="fund-ratio-info">
+          <text class="fund-ratio {{item.ratio < 0 ? 'loss-bg' : 'profit-bg'}}">{{item.ratio > 0 ? '+' : ''}}{{item.ratio}}%</text>
         </view>
       </view>
     </block>
